@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: azure;
+}
+
+html {
+    height: 100%;
+    /* De esta manera se utiliza el 100% del espacio de pagina */
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+    /* se usa para que utilice el 100% de la pagina */
+}
+
+.grid-container>* {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    /* Espacio entre elementos */
+    grid-template:
+        "headmain" 100%
+        "footer" 20vh /100%;
+    /* Se usa para definir las areas o secciones que va a tener nuestro html, puede ser cualquier nombre dentro de cada comilla */
+    /* De esta manera podemos organizar los elementos en distinto orden sin importar como este dentro del html */
+}
+
+.hd-mn {
+    grid-area: headmain;
+    background: url(../multimedias/carro-pro.mp4);
+    display: grid;
+    grid-template:
+        "header" 5vh
+        "main" 100%/ 100%;
+}
+
+/* A cada clase que defimos en html la vamos a asignar un area */
+.header {
+    grid-area: header;
+    /* Llama el area declarada anteriormente  y se la asigna a la clase "header"*/
+    background-color: transparent;
+
+}
+
+.main {
+    grid-area: main;
+    background-color: transparent;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: violet;
+}
+
+.hd-mn {
+    position: relative;
+}
+
+.hd-mn video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+a {
+    margin: 2vh 5vw;
+}
+
+.btns-home {
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: -moz-grid-group;
+    margin: 0 20vw 20vw  0;
+    width: 100%;
+}
+
+.text {
+    width: 35vw;
+    height: 40vh;
+    padding: 20px;
+    margin: 15vh;
+    font-style: oblique;
+    background-color: #000000d2;
+}
+
+.text p {
+    margin-top: 20px;
+}
+
+.sl-marcas {
+    display: flexbox;
+}
+
+.navbar {
+    display: flex;
+    text-align: center;
+    margin: 0 10vw;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template:
+            "headmain headmain" 100%
+            "footer footer" 20vh / 25vw auto;
+    }
+
+    .hd-mn {
+        position: relative;
+    }
+
+    .hd-mn video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+}
+
+/* para computador */
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template:
+            "headmain headmain headmain" 100%
+            "footer footer footer" 20vh / 15vw auto 25vw;
+    }
+
+    .hd-mn {
+        position: relative;
+    }
+
+    .hd-mn video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+}
+
+body{
+    background-color: #137ab4;
+}
+.lista-marcas {
+    list-style: none;
+    display: flex;
+    /* flex para alinear verticalmente */
+    align-items: center;
+    /* Centrar verticalmente */
+    margin: 0 7vw;
+}
+
+.marcas-dv {
+    width: auto;
+    height: 40%;
+}
+
+.marcas-dv img {
+    width: 100px;
+    padding: 20px;
+}
+
+.lista-marcas div {
+    margin: 0 2vw;
+    height: 15vh;
+    width: 15vh;
+    border: solid;
+    display: flex;
+    align-items: center;
+    /* Centrar verticalmente el contenido de cada elemento */
+}
+
+#chevrolet {
+    width: 100%;
+    padding: 2px;
+}
+
+#audi {
+    width: 100%;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* botones */
+.btns-marcas {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.lk-marcas button {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.lk-dv {
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+}
+
+/* Se perfecciona el centrado de los botones */
+#btn-audi {
+    padding: 18px;
+}
+
+#btn-honda {
+    padding: 15px;
+}
+
+#btn-porsc {
+    padding: 10px;
+}
+
+#btn-ren {
+    padding: 8px;
+}
+
+#btn-bmw {
+    padding: 15px;
+}
+
+.lk-marcas button:hover {
+    background-color: #137ab4;
+    color: whitesmoke;
+}
